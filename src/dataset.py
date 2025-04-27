@@ -19,7 +19,7 @@ for class_name in os.listdir(pet_images_path):
             labels.append("0")
         else:
             labels.append("1")
-        input_path.append(file_path)     
+        input_path.append(file_path)
 
 df = pd.DataFrame()
 df["images"] = input_path

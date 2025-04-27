@@ -22,23 +22,23 @@ train_generator = ImageDataGenerator(
 )
 
 train_iterator = train_generator.flow_from_dataframe(
-    train, 
+    train,
     x_col="images",
     y_col="label",
     target_size=(128, 128),
     batch_size=512,
-    class_mode="binary"
+    class_mode="binary",
 )
 
 val_generator = ImageDataGenerator(rescale=1.0 / 255)
 
 val_iterator = val_generator.flow_from_dataframe(
-    test, 
+    test,
     x_col="images",
     y_col="label",
     target_size=(128, 128),
     batch_size=512,
-    class_mode="binary"
+    class_mode="binary",
 )
 
 
