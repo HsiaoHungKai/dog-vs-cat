@@ -1,32 +1,49 @@
-# Data Project Template
+# Dog vs Cat Classification
+This project implements a deep learning pipeline to classify images of dogs and cats using a Convolutional Neural Network (CNN). The project includes data preprocessing, model training, evaluation, and visualization of results.
 
-<a target="_blank" href="https://datalumina.com/">
-    <img src="https://img.shields.io/badge/Datalumina-Project%20Template-2856f7" alt="Datalumina Project" />
-</a>
 
-## Cookiecutter Data Science
-This project template is a simplified version of the [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org) template, created to suit the needs of Datalumina and made available as a GitHub template.
+### Dataset Preparation
+The dataset.py script:
 
-## Adjusting .gitignore
+Reads images from the data/pet_images/ folder.
+Assigns labels (0 for Cats, 1 for Dogs).
+Removes invalid or corrupted images.
 
-Ensure you adjust the `.gitignore` file according to your project needs. For example, since this is a template, the `/data/` folder is commented out and data will not be exlucded from source control:
+### Data Augmentation
+The features.py script:
 
-```plaintext
-# exclude data from source control by default
-# /data/
-```
+Splits the dataset into training and validation sets.
+Applies data augmentation (e.g., rotation, zoom, flipping) to the training set using ImageDataGenerator.
 
-Typically, you want to exclude this folder if it contains either sensitive data that you do not want to add to version control or large files.
+### Model Training
+The train.py script:
 
-## Duplicating the .env File
-To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
+Defines a CNN model using Keras.
+Trains the model on the augmented dataset.
+Saves the trained model (dog_vs_cat_model.h5) and training history (history.pkl) in the models/ folder.
 
-```bash
-cp .env.example .env # Linux, macOS, Git Bash, WSL
-copy .env.example .env # Windows Command Prompt
-```
+### Prediction
+The predict.py script:
 
-This command creates a copy of `.env.example` and names it `.env`, allowing you to configure your environment variables specific to your setup.
+Loads the trained model.
+Predicts the label for a single image provided by the user.
+Evaluates the model on random samples of 1000 dog and 1000 cat images.
+#### Accuracy:
+
+- **Dog Images**: About **68.6%** of dog images are predicted correctly.
+- **Cat Images**: About **85.7%** of cat images are predicted correctly.
+
+### Visualization
+The plots.py script:
+
+Displays sample images of dogs, cats, and augmented images.
+Plots training and validation accuracy and loss.
+
+### Dataset
+
+The dataset used for this project is too large to be stored in the repository. You can download it from the following link:
+
+[Download Dog vs Cat Dataset](https://download.microsoft.com/download/3/E/1/3E1C3F21-ECDB-4869-8368-6DEBA77B919F/kagglecatsanddogs_5340.zip)
 
 
 ## Project Organization

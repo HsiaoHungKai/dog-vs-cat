@@ -25,7 +25,7 @@ else:
 # Test the model with a random sample of 100 dogs
 success = 0
 start = random.randint(0, len(df[df['label'] == "1"]) - 1)
-test_size = 100
+test_size = 1000
 for image in df[df['label'] == "1"]['images'][start:start + test_size]:
     img = load_img(image, target_size=(128, 128))
     img = np.array(img)
@@ -39,7 +39,7 @@ print(f"Success: {success} / {test_size}")
 # Test the model with a random sample of 100 cats
 success = 0
 start = random.randint(0, len(df[df['label'] == "0"]) - 1)
-test_size = 100
+test_size = 1000
 for image in df[df['label'] == "0"]['images'][start:start + test_size]:
     img = load_img(image, target_size=(128, 128))
     img = np.array(img)
