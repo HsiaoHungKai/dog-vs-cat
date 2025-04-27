@@ -5,29 +5,29 @@ This project implements a deep learning pipeline to classify images of dogs and 
 ### Dataset Preparation
 The dataset.py script:
 
-Reads images from the data/pet_images/ folder.
-Assigns labels (0 for Cats, 1 for Dogs).
-Removes invalid or corrupted images.
+- Reads images from the data/pet_images/ folder.
+- Assigns labels (0 for Cats, 1 for Dogs).
+- Removes invalid or corrupted images.
 
 ### Data Augmentation
 The features.py script:
 
-Splits the dataset into training and validation sets.
-Applies data augmentation (e.g., rotation, zoom, flipping) to the training set using ImageDataGenerator.
+- Splits the dataset into training and validation sets.
+- Applies data augmentation (e.g., rotation, zoom, flipping) to the training set using ImageDataGenerator.
 
 ### Model Training
 The train.py script:
 
-Defines a CNN model using Keras.
-Trains the model on the augmented dataset.
-Saves the trained model (dog_vs_cat_model.h5) and training history (history.pkl) in the models/ folder.
+- Defines a CNN model using Keras.
+- Trains the model on the augmented dataset.
+- Saves the trained model (dog_vs_cat_model.h5) and training history (history.pkl) in the models/ folder.
 
 ### Prediction
 The predict.py script:
 
-Loads the trained model.
-Predicts the label for a single image provided by the user.
-Evaluates the model on random samples of 1000 dog and 1000 cat images.
+- Loads the trained model.
+- Predicts the label for a single image provided by the user.
+- Evaluates the model on random samples of 1000 dog and 1000 cat images.
 #### Accuracy:
 
 - **Dog Images**: About **68.6%** of dog images are predicted correctly.
@@ -36,12 +36,12 @@ Evaluates the model on random samples of 1000 dog and 1000 cat images.
 ### Visualization
 The plots.py script:
 
-Displays sample images of dogs, cats, and augmented images.
-Plots training and validation accuracy and loss.
+- Displays sample images of dogs, cats, and augmented images.
+- Plots training and validation accuracy and loss.
 
 ### Dataset
 
-The dataset used for this project is too large to be stored in the repository. You can download it from the following link:
+- The dataset used for this project is too large to be stored in the repository. You can download it from the following link:
 
 [Download Dog vs Cat Dataset](https://download.microsoft.com/download/3/E/1/3E1C3F21-ECDB-4869-8368-6DEBA77B919F/kagglecatsanddogs_5340.zip)
 
